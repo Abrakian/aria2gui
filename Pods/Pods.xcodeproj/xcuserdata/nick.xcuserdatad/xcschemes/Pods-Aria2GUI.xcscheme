@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'CEB29F5170F8B27FB778A1B7E95A8806'
+               BlueprintIdentifier = '1A409FED4031736DC33FB87E8D6C0320'
                BlueprintName = 'Pods-Aria2GUI'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPods-Aria2GUI.a'>

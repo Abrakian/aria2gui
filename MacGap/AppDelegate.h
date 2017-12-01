@@ -17,8 +17,6 @@
 }
 
 @property (retain, nonatomic) WindowController *windowController;
-@property (nonatomic,strong) NSStatusItem *statusItem;
-@property (nonatomic,strong) NSPopover *popOver;
 
 
 @end

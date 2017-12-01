@@ -37,3 +37,5 @@
 #define Aria2GUI_CONTIUNE @"UserDefaultContinue"
 #define Aria2GUI_STATUS_BAR_STATE @"UserDefaultMenubarState"
 #define Aria2GUI_LOG_FILE_STATE @"UserDefaultLogFileState"
+#define Aria2GUI_MAX_TRIES @"UserDefaultMaxTries"
+#define Aria2GUI_RETRY_WAIT @"UserDefaultRetryWait"

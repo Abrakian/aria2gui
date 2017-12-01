@@ -9,7 +9,9 @@
 #import "AppDelegate.h"
 #import "WindowController.h"
 #import "AppPrefsWindowsController.h"
-#import "SBPopViewCotroller.h"
+#import "CCNStatusItem.h"
+#import "CCNStatusItemWindowConfiguration.h"
+#import "ContentViewController.h"
 
 
 @implementation AppDelegate
@@ -24,13 +26,15 @@
                                         Aria2GUI_PROXY_STATE:@(NO),
                                         Aria2GUI_USER_STATE:@(NO),
                                         Aria2GUI_DISK_CACHE:@(0),
-                                        Aria2GUI_MAX_CONNECTION_PER_SERVER:@(20),
-                                        Aria2GUI_MIN_SPLIT_SIZE:@(10),
-                                        Aria2GUI_SPLIT:@(20),
+                                        Aria2GUI_MAX_CONNECTION_PER_SERVER:@(256),
+                                        Aria2GUI_MIN_SPLIT_SIZE:@(512),
+                                        Aria2GUI_SPLIT:@(256),
                                         Aria2GUI_ALLOW_OVERWRITE_STATE:@("true"),
                                         Aria2GUI_AUTO_FILE_RENAMEING_STATE:@("true"),
                                         Aria2GUI_CONTIUNE:@("true"),
                                         Aria2GUI_LOG_FILE_STATE:@(NO),
+                                        Aria2GUI_MAX_TRIES:@(0),
+                                        Aria2GUI_RETRY_WAIT:@(5),
                                         };
         [[NSUserDefaults standardUserDefaults] registerDefaults:defaultValues];
         [[NSUserDefaultsController sharedUserDefaultsController] setInitialValues:defaultValues];
@@ -67,9 +71,9 @@
     [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
     }
     else
-    [self showStatusBar];
-
-
+    //[self showStatusBar];
+    [[CCNStatusItem sharedInstance] presentStatusItemWithImage:[NSImage imageNamed:@"aria2@2x.png"]
+                                             contentViewController:[ContentViewController viewController]];
 }
 
 - (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center
@@ -102,12 +106,19 @@
         dir = [@"~/Downloads" stringByExpandingTildeInPath];
     }
     
-    NSString *maxDownloadSpeedStr = [NSString stringWithFormat:@"%ldk",[[NSUserDefaults standardUserDefaults] integerForKey:Aria2GUI_MAX_DOWNLOAD_SPEED]];
-    NSString *maxUploadSpeedStr = [NSString stringWithFormat:@"%ldk",[[NSUserDefaults standardUserDefaults] integerForKey:Aria2GUI_MAX_UPLOAD_SPEED]];
-    NSString *maxPerDownloadSpeedStr = [NSString stringWithFormat:@"%ldk",[[NSUserDefaults standardUserDefaults] integerForKey:Aria2GUI_MAX_PER_DOWNLOAD_SPEED]];
-    NSString *maxPerUploadSpeedStr = [NSString stringWithFormat:@"%ldk",[[NSUserDefaults standardUserDefaults] integerForKey:Aria2GUI_MAX_PER_UPLOAD_SPEED]];
+    double maxDownloadSpeedIn = [[NSUserDefaults standardUserDefaults] doubleForKey:Aria2GUI_MAX_DOWNLOAD_SPEED];
+    NSString *maxDownloadSpeedStr = [NSString stringWithFormat:@"%d", (int)(maxDownloadSpeedIn * 1000)];
     
-    NSString *shCommand = [NSString stringWithFormat:@"%@ --dir=%@ --conf-path=%@  --input-file=%@ --save-session=%@  --max-concurrent-downloads=%@ --max-connection-per-server=%@ --min-split-size=%@M --split=%@  --max-overall-download-limit=%@M --max-overall-upload-limit=%@K --max-download-limit=%@M --max-upload-limit=%@K --continue=%@ --auto-file-renaming=%@ --allow-overwrite=%@ --disk-cache=%@M -D ",[[NSBundle mainBundle] pathForResource:@"aria2c" ofType:nil],dir,[[NSBundle mainBundle] pathForResource:@"aria2" ofType:@"conf"],[[NSBundle mainBundle] pathForResource:@"aria2" ofType:@"session"],[[NSBundle mainBundle] pathForResource:@"aria2" ofType:@"session"],[[NSUserDefaults standardUserDefaults] objectForKey:Aria2GUI_MAX_CONCURRENT_DOWNLOADS],[[NSUserDefaults standardUserDefaults] objectForKey:Aria2GUI_MAX_CONNECTION_PER_SERVER],[[NSUserDefaults standardUserDefaults] objectForKey:Aria2GUI_MIN_SPLIT_SIZE],[[NSUserDefaults standardUserDefaults] objectForKey:Aria2GUI_SPLIT],maxDownloadSpeedStr,maxUploadSpeedStr,maxPerDownloadSpeedStr,maxPerUploadSpeedStr,[[NSUserDefaults standardUserDefaults] objectForKey:Aria2GUI_CONTIUNE],[[NSUserDefaults standardUserDefaults] objectForKey:Aria2GUI_AUTO_FILE_RENAMEING_STATE],[[NSUserDefaults standardUserDefaults] objectForKey:Aria2GUI_ALLOW_OVERWRITE_STATE],[[NSUserDefaults standardUserDefaults] objectForKey:Aria2GUI_DISK_CACHE]];
+    double maxPerDownloadSpeedIn = [[NSUserDefaults standardUserDefaults] doubleForKey:Aria2GUI_MAX_PER_DOWNLOAD_SPEED];
+    NSString *maxPerDownloadSpeedStr = [NSString stringWithFormat:@"%d", (int)(maxPerDownloadSpeedIn * 1000)];
+    
+    double maxUploadSpeedIn = [[NSUserDefaults standardUserDefaults] doubleForKey:Aria2GUI_MAX_UPLOAD_SPEED];
+    NSString *maxUploadSpeedStr = [NSString stringWithFormat:@"%d", (int)maxUploadSpeedIn];
+    
+    double maxPerUploadSpeedIn = [[NSUserDefaults standardUserDefaults] doubleForKey:Aria2GUI_MAX_PER_UPLOAD_SPEED];
+    NSString *maxPerUploadSpeedStr = [NSString stringWithFormat:@"%d", (int)maxPerUploadSpeedIn];
+    
+    NSString *shCommand = [NSString stringWithFormat:@"%@ --dir=%@ --conf-path=%@  --input-file=%@ --save-session=%@  --max-concurrent-downloads=%@ --max-connection-per-server=%@ --min-split-size=%@K --split=%@  --max-overall-download-limit=%@K --max-overall-upload-limit=%@K --max-download-limit=%@K --max-upload-limit=%@K --continue=%@ --auto-file-renaming=%@ --allow-overwrite=%@ --disk-cache=%@M --max-tries=%@ --retry-wait=%@ -D ",[[NSBundle mainBundle] pathForResource:@"aria2c" ofType:nil],dir,[[NSBundle mainBundle] pathForResource:@"aria2" ofType:@"conf"],[[NSBundle mainBundle] pathForResource:@"aria2" ofType:@"session"],[[NSBundle mainBundle] pathForResource:@"aria2" ofType:@"session"],[[NSUserDefaults standardUserDefaults] objectForKey:Aria2GUI_MAX_CONCURRENT_DOWNLOADS],[[NSUserDefaults standardUserDefaults] objectForKey:Aria2GUI_MAX_CONNECTION_PER_SERVER],[[NSUserDefaults standardUserDefaults] objectForKey:Aria2GUI_MIN_SPLIT_SIZE],[[NSUserDefaults standardUserDefaults] objectForKey:Aria2GUI_SPLIT],maxDownloadSpeedStr,maxUploadSpeedStr,maxPerDownloadSpeedStr,maxPerUploadSpeedStr,[[NSUserDefaults standardUserDefaults] objectForKey:Aria2GUI_CONTIUNE],[[NSUserDefaults standardUserDefaults] objectForKey:Aria2GUI_AUTO_FILE_RENAMEING_STATE],[[NSUserDefaults standardUserDefaults] objectForKey:Aria2GUI_ALLOW_OVERWRITE_STATE],[[NSUserDefaults standardUserDefaults] objectForKey:Aria2GUI_DISK_CACHE],[[NSUserDefaults standardUserDefaults] objectForKey:Aria2GUI_MAX_TRIES],[[NSUserDefaults standardUserDefaults] objectForKey:Aria2GUI_RETRY_WAIT]];
     [shCommand writeToFile:startAriaPath atomically:YES encoding:NSUTF8StringEncoding error:nil];
 
     NSFileHandle *fileHandle = [NSFileHandle fileHandleForUpdatingAtPath:startAriaPath];
@@ -157,39 +168,6 @@
     [task launch];
     [NSApp terminate:self];
 
-}
--(void)showStatusBar
-{
-    [NSApp setActivationPolicy:NSApplicationActivationPolicyAccessory];
-    
-    self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
-    NSImage *image = [NSImage imageNamed:@"aria2"];
-    [self.statusItem.button setImage:image];
-    
-    _popOver = [[NSPopover alloc] init];
-    _popOver.behavior = NSPopoverBehaviorTransient;
-    _popOver.appearance = [NSAppearance appearanceNamed:NSAppearanceNameVibrantLight];
-    _popOver.contentViewController = [[SBPopViewCotroller alloc] initWithNibName:@"SBPopViewCotroller" bundle:nil];
-    
-    
-    self.statusItem.target = self ;
-    self.statusItem.button.action =@selector(showMyPopover:);
-    
-    
-    
-    __weak typeof(self) weakSelf = self;
-    [NSEvent addGlobalMonitorForEventsMatchingMask:NSLeftMouseDownMask handler:^(NSEvent *event)
-     {
-         if(weakSelf.popOver.isShown)
-         {
-             [weakSelf.popOver close];
-         }
-     }];
-}
-
--(void)showMyPopover:(NSStatusBarButton *)button
-{
-    [_popOver showRelativeToRect:button.bounds ofView:button preferredEdge:NSRectEdgeMaxY];
 }
 
 - (IBAction)openPreferences:(id)sender

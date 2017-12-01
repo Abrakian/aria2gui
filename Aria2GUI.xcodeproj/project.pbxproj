@@ -17,7 +17,6 @@
 		0184043B1E9A87510000B9C4 /* AppPrefsWindowsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 018404381E9A87510000B9C4 /* AppPrefsWindowsController.m */; };
 		0184043C1E9A87510000B9C4 /* DBPrefsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0184043A1E9A87510000B9C4 /* DBPrefsWindowController.m */; };
 		0184043F1E9A88D90000B9C4 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 018404411E9A88D90000B9C4 /* Preferences.xib */; };
-		018404491E9A89ED0000B9C4 /* SBPopViewCotroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 018404471E9A89ED0000B9C4 /* SBPopViewCotroller.m */; };
 		0184044C1E9A8C190000B9C4 /* aria2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0184044B1E9A8C190000B9C4 /* aria2@2x.png */; };
 		01B5354C1E0A1A2100C05F9A /* Bandwidth.png in Resources */ = {isa = PBXBuildFile; fileRef = 01B535481E0A1A2100C05F9A /* Bandwidth.png */; };
 		01B5354D1E0A1A2100C05F9A /* Bandwidth@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01B535491E0A1A2100C05F9A /* Bandwidth@2x.png */; };
@@ -25,7 +24,8 @@
 		01B5354F1E0A1A2100C05F9A /* General@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01B5354B1E0A1A2100C05F9A /* General@2x.png */; };
 		01BC003B1DDCB9D200DB1BB0 /* aria2.session in Resources */ = {isa = PBXBuildFile; fileRef = 01BC003A1DDCB9D200DB1BB0 /* aria2.session */; };
 		01CC37EB1E0428E900B34A9D /* aria2c in Resources */ = {isa = PBXBuildFile; fileRef = 01CC37EA1E0428E900B34A9D /* aria2c */; };
-		01DE1EB01EA3618A000458CD /* SBPopViewCotroller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01DE1EB21EA3618A000458CD /* SBPopViewCotroller.xib */; };
+		01DE86ED1FA98884004EE6F8 /* ContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01DE86EB1FA98884004EE6F8 /* ContentViewController.xib */; };
+		01DE86EE1FA98884004EE6F8 /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DE86EC1FA98884004EE6F8 /* ContentViewController.m */; };
 		2237E64A192B0177001E1393 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2237E649192B0177001E1393 /* Cocoa.framework */; };
 		2237E67E192B0186001E1393 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2237E67D192B0186001E1393 /* WebKit.framework */; };
 		2237E680192B018D001E1393 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2237E67F192B018D001E1393 /* JavaScriptCore.framework */; };
@@ -60,6 +60,19 @@
 		8DCE80E44DC9644A4F0F9B67 /* libPods-Aria2GUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0952E08A0E08B93F85B296E6 /* libPods-Aria2GUI.a */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		01894C391FA441C100AA7910 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		010CE6C31E0CF6CB0076F60C /* Proxy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Proxy.png; sourceTree = "<group>"; };
 		010CE6C41E0CF6CB0076F60C /* Proxy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Proxy@2x.png"; sourceTree = "<group>"; };
@@ -82,8 +95,6 @@
 		018404421E9A88F70000B9C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainWindow.strings; sourceTree = "<group>"; };
 		018404431E9A88F80000B9C4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MainWindow.strings"; sourceTree = "<group>"; };
 		018404441E9A88FA0000B9C4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/MainWindow.strings; sourceTree = "<group>"; };
-		018404461E9A89ED0000B9C4 /* SBPopViewCotroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBPopViewCotroller.h; sourceTree = "<group>"; };
-		018404471E9A89ED0000B9C4 /* SBPopViewCotroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBPopViewCotroller.m; sourceTree = "<group>"; };
 		0184044B1E9A8C190000B9C4 /* aria2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aria2@2x.png"; sourceTree = "<group>"; };
 		01B535481E0A1A2100C05F9A /* Bandwidth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bandwidth.png; sourceTree = "<group>"; };
 		01B535491E0A1A2100C05F9A /* Bandwidth@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bandwidth@2x.png"; sourceTree = "<group>"; };
@@ -94,13 +105,13 @@
 		01CAFC051E1645E300506429 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = ja; path = ja.lproj/Credits.rtf; sourceTree = "<group>"; };
 		01CAFC061E1645E300506429 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		01CC37EA1E0428E900B34A9D /* aria2c */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = aria2c; sourceTree = "<group>"; };
-		01DE1EB11EA3618A000458CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SBPopViewCotroller.xib; sourceTree = "<group>"; };
-		01DE1EB41EA3618C000458CD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SBPopViewCotroller.strings; sourceTree = "<group>"; };
-		01DE1EB61EA3618D000458CD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SBPopViewCotroller.strings"; sourceTree = "<group>"; };
-		01DE1EB81EA3618D000458CD /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/SBPopViewCotroller.strings; sourceTree = "<group>"; };
 		01DE1EBA1EA36192000458CD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Preferences.strings; sourceTree = "<group>"; };
 		01DE1EBC1EA36193000458CD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Preferences.strings"; sourceTree = "<group>"; };
 		01DE1EBE1EA36194000458CD /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Preferences.strings; sourceTree = "<group>"; };
+		01DE86E31FA980E2004EE6F8 /* libCCNStatusItem.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCCNStatusItem.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		01DE86EA1FA98884004EE6F8 /* ContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentViewController.h; sourceTree = "<group>"; };
+		01DE86EB1FA98884004EE6F8 /* ContentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentViewController.xib; sourceTree = "<group>"; };
+		01DE86EC1FA98884004EE6F8 /* ContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
 		0952E08A0E08B93F85B296E6 /* libPods-Aria2GUI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Aria2GUI.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2237E646192B0177001E1393 /* Aria2GUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aria2GUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2237E649192B0177001E1393 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -208,15 +219,16 @@
 			path = AppPrefsWindowsController;
 			sourceTree = "<group>";
 		};
-		018404451E9A89ED0000B9C4 /* SBPopViewCotroller */ = {
+		01DE86E91FA98884004EE6F8 /* ContentViewController */ = {
 			isa = PBXGroup;
 			children = (
-				018404461E9A89ED0000B9C4 /* SBPopViewCotroller.h */,
-				018404471E9A89ED0000B9C4 /* SBPopViewCotroller.m */,
-				01DE1EB21EA3618A000458CD /* SBPopViewCotroller.xib */,
+				01DE86EA1FA98884004EE6F8 /* ContentViewController.h */,
+				01DE86EC1FA98884004EE6F8 /* ContentViewController.m */,
+				01DE86EB1FA98884004EE6F8 /* ContentViewController.xib */,
 			);
-			path = SBPopViewCotroller;
-			sourceTree = "<group>";
+			name = ContentViewController;
+			path = MacGap/ContentViewController;
+			sourceTree = SOURCE_ROOT;
 		};
 		2237E63D192B0177001E1393 = {
 			isa = PBXGroup;
@@ -240,6 +252,7 @@
 		2237E648192B0177001E1393 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				01DE86E31FA980E2004EE6F8 /* libCCNStatusItem.a */,
 				2237E67F192B018D001E1393 /* JavaScriptCore.framework */,
 				2237E67D192B0186001E1393 /* WebKit.framework */,
 				2237E649192B0177001E1393 /* Cocoa.framework */,
@@ -271,7 +284,7 @@
 				22B1CEF41937734B00D2C294 /* AppDelegate.h */,
 				22B1CEF51937734B00D2C294 /* AppDelegate.m */,
 				22B1CF221937734B00D2C294 /* Constants.h */,
-				018404451E9A89ED0000B9C4 /* SBPopViewCotroller */,
+				01DE86E91FA98884004EE6F8 /* ContentViewController */,
 				018404361E9A87510000B9C4 /* AppPrefsWindowsController */,
 				22B1CF46193773BA00D2C294 /* Interface Builder */,
 				22B1CEFA1937734B00D2C294 /* Categories */,
@@ -391,6 +404,7 @@
 				2237E644192B0177001E1393 /* Resources */,
 				94DF81037588484357510775 /* [CP] Embed Pods Frameworks */,
 				66FC57A2F0E7F623322EACF9 /* [CP] Copy Pods Resources */,
+				01894C391FA441C100AA7910 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -407,7 +421,7 @@
 		2237E63E192B0177001E1393 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0900;
 			};
 			buildConfigurationList = 2237E641192B0177001E1393 /* Build configuration list for PBXProject "Aria2GUI" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -436,9 +450,9 @@
 			files = (
 				01BC003B1DDCB9D200DB1BB0 /* aria2.session in Resources */,
 				01B5354E1E0A1A2100C05F9A /* General.png in Resources */,
+				01DE86ED1FA98884004EE6F8 /* ContentViewController.xib in Resources */,
 				22B1CF401937734B00D2C294 /* Credits.rtf in Resources */,
 				22B1CF421937734B00D2C294 /* Images.xcassets in Resources */,
-				01DE1EB01EA3618A000458CD /* SBPopViewCotroller.xib in Resources */,
 				018404351E9A870D0000B9C4 /* aria2.log in Resources */,
 				016F30341E097AA8001132DF /* restartAria2.sh in Resources */,
 				010CE6C51E0CF6CB0076F60C /* Proxy.png in Resources */,
@@ -482,13 +496,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Aria2GUI-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		94DF81037588484357510775 /* [CP] Embed Pods Frameworks */ = {
@@ -517,6 +534,7 @@
 				22B1CF341937734B00D2C294 /* Dock.m in Sources */,
 				22B1CF2E1937734B00D2C294 /* JSON.m in Sources */,
 				22BE36ED193B7F8800D8199F /* Defaults.m in Sources */,
+				01DE86EE1FA98884004EE6F8 /* ContentViewController.m in Sources */,
 				22B1CF381937734B00D2C294 /* MenuItem.m in Sources */,
 				22B1CF301937734B00D2C294 /* App.m in Sources */,
 				22B1CF371937734B00D2C294 /* Menu.m in Sources */,
@@ -529,7 +547,6 @@
 				0184043B1E9A87510000B9C4 /* AppPrefsWindowsController.m in Sources */,
 				0184043C1E9A87510000B9C4 /* DBPrefsWindowController.m in Sources */,
 				22B1CF311937734B00D2C294 /* Clipboard.m in Sources */,
-				018404491E9A89ED0000B9C4 /* SBPopViewCotroller.m in Sources */,
 				22B1CF2F1937734B00D2C294 /* NSData+Base64.m in Sources */,
 				22B1CF431937734B00D2C294 /* main.m in Sources */,
 				22B1CF321937734B00D2C294 /* Command.m in Sources */,
@@ -554,17 +571,6 @@
 				01DE1EBE1EA36194000458CD /* ja */,
 			);
 			name = Preferences.xib;
-			sourceTree = "<group>";
-		};
-		01DE1EB21EA3618A000458CD /* SBPopViewCotroller.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				01DE1EB11EA3618A000458CD /* Base */,
-				01DE1EB41EA3618C000458CD /* en */,
-				01DE1EB61EA3618D000458CD /* zh-Hans */,
-				01DE1EB81EA3618D000458CD /* ja */,
-			);
-			name = SBPopViewCotroller.xib;
 			sourceTree = "<group>";
 		};
 		22B1CEF61937734B00D2C294 /* MainMenu.xib */ = {
@@ -623,14 +629,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -654,7 +666,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
@@ -669,14 +681,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -693,7 +711,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -703,11 +721,13 @@
 			baseConfigurationReference = ADDA4A28FC3D44C924CC73E2 /* Pods-Aria2GUI.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MacGap/Aria2GUI-Prefix.pch";
 				INFOPLIST_FILE = "MacGap/Aria2GUI-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = Aria2GUI;
 				WRAPPER_EXTENSION = app;
@@ -719,11 +739,13 @@
 			baseConfigurationReference = F2C08CD9559F1BC3E8D5C2B5 /* Pods-Aria2GUI.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MacGap/Aria2GUI-Prefix.pch";
 				INFOPLIST_FILE = "MacGap/Aria2GUI-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = Aria2GUI;
 				WRAPPER_EXTENSION = app;
