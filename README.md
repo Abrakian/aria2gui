@@ -25,7 +25,7 @@ Aria2GUI
 - 导出插件：[百度网盘](https://github.com/acgotaku/BaiduExporter)，[115网盘](https://github.com/acgotaku/115)，~~[迅雷离线](https://github.com/binux/ThunderLixianExporter)~~
 - 网盘插件里面的User-Agent优先级高于客户端，所以修改客户端里面User-Agent不会影响导出下载的速度，默认伪装成Transmission/2.77是为了支持BT/PT
 - 把同一服务器连接数的上限从16提高到了256，默认值256，单个任务最大线程数默认值相应改为256，新加入"max-tries" "retry-wait"两个启动项，为了下载某盘资源时获得更理想的下载速度。
-- 百度网盘对于插件进行了某些限制，某些情况下无法下载，具体参考https://github.com/acgotaku/BaiduExporter/issues/547
+- 百度网盘对于插件进行了某些限制，不登陆的情况直接报header错误，登录后第一次会弹验证码之后就正常了，会员暂时没发现有什么限制，具体参考https://github.com/acgotaku/BaiduExporter/issues/547
 
 ## Download:
 
