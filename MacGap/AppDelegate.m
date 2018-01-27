@@ -14,6 +14,7 @@
 #import "ContentViewController.h"
 
 
+
 @implementation AppDelegate
 
 + (void)initialize {
@@ -26,9 +27,9 @@
                                         Aria2GUI_PROXY_STATE:@(NO),
                                         Aria2GUI_USER_STATE:@(NO),
                                         Aria2GUI_DISK_CACHE:@(0),
-                                        Aria2GUI_MAX_CONNECTION_PER_SERVER:@(256),
-                                        Aria2GUI_MIN_SPLIT_SIZE:@(512),
-                                        Aria2GUI_SPLIT:@(256),
+                                        Aria2GUI_MAX_CONNECTION_PER_SERVER:@(16),
+                                        Aria2GUI_MIN_SPLIT_SIZE:@(1024),
+                                        Aria2GUI_SPLIT:@(16),
                                         Aria2GUI_ALLOW_OVERWRITE_STATE:@("true"),
                                         Aria2GUI_AUTO_FILE_RENAMEING_STATE:@("true"),
                                         Aria2GUI_CONTIUNE:@("true"),
